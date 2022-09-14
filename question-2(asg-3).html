@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>question-2</title>
+</head>
+<body>
+    <script>
+    var orderData = {
+        'Below 500': 20,
+        '500-1000': 29,
+        '1000-1500': 30,
+        '1500-2000': 44,
+        'Above 2000': 76
+    };
+    var total=0;
+    var tot_arr=Object.values(orderData);
+    for(let i=0;i<tot_arr.length;i++){
+        total+=tot_arr[i];
+    }; 
+    console.log("Total number of orders placed =",total);
+
+    var options=tot_arr.length;
+    console.log("Total number of order proportions =",options);
+    const response = tot_arr.map((item, index) => {  
+    return {
+    'id': index + 1,
+    'restaurant': 'Punjabi Tadka',
+    'order': item,
+    'order percentage': ((orderData[item] / 199) * 100).toFixed(2)
+  }
+  });
+    console.log(response)
+    </script>
+</body>
+</html>
